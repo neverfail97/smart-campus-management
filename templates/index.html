@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Campus Management | CSE</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="aurora a1"></div><div class="aurora a2"></div><div class="grid-noise"></div>
+<header class="shell topbar">
+  <a class="brand" href="#home" data-nav="home"><span class="brand-mark" aria-hidden="true"><span class="screen-glow"></span><span class="cursor-dot">▸</span></span><span>Smart Campus<small>CSE DEPARTMENT</small></span></a>
+  <nav class="top-actions">
+    <button id="menuButton" class="menu-button" aria-expanded="false"><span class="menu-dots">•••</span> Menu</button>
+    <button id="loginButton" class="login">Faculty access</button>
+  </nav>
+  <div id="menuPanel" class="menu-panel glass">
+    <div class="menu-head"><span class="section-label">CAMPUS CONSOLE</span><button id="closeMenu" class="icon-button">×</button></div>
+    <button data-nav="home"><span>⌂</span><b>Department</b><small>Introduction &amp; overview</small></button>
+    <button data-nav="rooms"><span>◫</span><b>Rooms &amp; Resources</b><small>Spaces, inventory &amp; capacity</small></button>
+    <button data-nav="issues"><span>⚑</span><b>Maintenance Desk</b><small>Report and resolve issues</small></button>
+    <button data-nav="timetable"><span>▦</span><b>Clash-Free Timetable</b><small>Weekly schedule &amp; allocations</small></button>
+    <button data-nav="progress"><span>⌁</span><b>Syllabus Progress</b><small>Coverage &amp; timetable sheet</small></button>
+  </div>
+</header>
+
+<main class="shell">
+<section id="home" class="screen active">
+  <section class="hero glass">
+    <div class="hero-copy">
+      <span class="pill">PUDUCHERRY TECHNOLOGICAL UNIVERSITY · CSE</span>
+      <h1>A smarter department, <em>in motion.</em></h1>
+      <p>Department introduction and a connected campus console for rooms, maintenance, scheduling, and learning progress.</p>
+      <div class="hero-actions"><button id="heroExplore">Open campus console <span>→</span></button><span class="hero-note">One website · one workspace · live Supabase data</span></div>
+    </div>
+    <div class="computer-orbit" aria-label="Interactive computer visual">
+      <div class="orbit-ring r1"></div><div class="orbit-ring r2"></div><div class="orbit-ring r3"></div>
+      <div class="computer">
+        <div class="monitor"><div class="terminal"><span>&gt; campus.init()</span><span>systems: <b>online</b></span><span class="typing">ready_</span></div></div>
+        <div class="stand"></div><div class="base"></div>
+      </div>
+      <i class="float-node n1">01</i><i class="float-node n2">AI</i><i class="float-node n3">⌁</i>
+    </div>
+  </section>
+  <section class="intro-grid">
+    <article class="glass intro-card large"><span class="section-label">ABOUT THE DEPARTMENT</span><h2>Grounded in computer science. Oriented toward the next frontier.</h2><p>The Department of Computer Science and Engineering provides a technology-focused academic environment connecting computing foundations, problem-solving, research, and practical learning.</p><div class="mini-line"></div><p class="muted">The department ecosystem spans teaching, research, laboratories, and technology-led activities designed around evolving real-world challenges.</p></article>
+    <article class="glass intro-card"><span class="section-label">RESEARCH LANDSCAPE</span><div class="tags"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Cloud Computing</span><span>Cybersecurity</span><span>NLP</span><span>Software Engineering</span></div><p>Research and teaching meet across modern computing domains.</p></article>
+    <article class="glass intro-card signal"><span class="section-label">CONNECTED CAMPUS</span><strong>04</strong><p>Operational workspaces are available from the menu.</p><button data-nav="rooms" class="text-button">Explore systems →</button></article>
+  </section>
+</section>
+
+<section id="rooms" class="screen workspace">
+  <div class="workspace-head"><div><span class="section-label">ROOMS &amp; RESOURCES</span><h2>Every space, clearly mapped.</h2><p class="hint">Search, filter, and add room records without leaving this website.</p></div><div class="head-actions"><div id="roomSummary" class="compact-stats"></div><button class="primary open-form" data-form="roomForm">+ Add room</button></div></div>
+  <div class="controls glass"><label>⌕ <input id="roomSearch" placeholder="Search room number or name"></label><div id="categoryFilters" class="filters"></div></div>
+  <div id="roomGrid" class="room-grid"></div>
+</section>
+
+<section id="issues" class="screen workspace">
+  <div class="workspace-head"><div><span class="section-label">MAINTENANCE DESK</span><h2>Resolve what matters first.</h2><p class="hint">Track issues from report to repair and faculty verification.</p></div><button class="primary open-form" data-form="issueForm">+ Report issue</button></div>
+  <div id="issueList" class="issue-list"></div>
+</section>
+
+<section id="timetable" class="screen workspace">
+  <div class="workspace-head"><div><span class="section-label">CLASH-FREE TIMETABLE</span><h2>One aligned weekly view.</h2><p class="hint">Room, section, lecturer, subject and time are visible together.</p></div><button class="primary open-form" data-form="timetableForm">+ Add class</button></div>
+  <div class="reference glass"><b>Scheduling windows</b><span>09:00–09:50 · 09:50–10:40 · 10:50–11:40 · 11:40–12:30 · 13:30–14:20 · 14:20–15:10 · 15:10–16:00 · 16:00–16:50</span></div>
+  <div class="timetable-toolbar glass"><span class="section-label">WEEKLY SHEET</span><div id="timetableLegend"></div></div>
+  <div id="timetableGrid" class="timetable-grid"></div>
+  <div class="table-wrap glass"><table class="data-table"><thead><tr><th>Day</th><th>Time</th><th>Code</th><th>Subject</th><th>Faculty</th><th>Room</th><th>Section</th></tr></thead><tbody id="timetableList"></tbody></table></div>
+</section>
+
+<section id="progress" class="screen workspace">
+  <div class="workspace-head"><div><span class="section-label">SYLLABUS PROGRESS</span><h2>Coverage at a glance.</h2><p class="hint">See completion, weekly updates, topics covered, and the teaching sheet in one place.</p></div><button class="primary open-form" data-form="progressForm">+ Log coverage</button></div>
+  <div id="progressOverview" class="progress-overview"></div>
+  <div class="progress-layout">
+    <div><div class="section-heading-inline"><span class="section-label">SUBJECT PROGRESS</span></div><div id="progressList" class="progress-list"></div></div>
+    <div><div class="section-heading-inline"><span class="section-label">TIMETABLE SHEET</span></div><div id="progressTimetable" class="mini-timetable glass"></div></div>
+  </div>
+</section>
+</main>
+
+<dialog id="accessDialog" class="glass"><form id="accessForm"><button type="button" class="close">×</button><span class="section-label">SECURE ACCESS</span><h2>Identify your role.</h2><p>Your access code is stored as a hash on the server.</p><label>Role<select name="role"><option value="faculty">Faculty</option><option value="worker">Maintenance staff</option></select></label><label>Name<input name="name" required placeholder="Enter name only"></label><label>University email<input type="email" name="email" required placeholder="name@ptuniv.edu.in"></label><label>Access code<input type="password" name="access_code" required></label><button class="primary">Continue →</button></form></dialog>
+
+<dialog id="entryDialog" class="glass"><form id="entryForm"><button type="button" class="close">×</button><input type="hidden" name="type"><span class="section-label">CAMPUS RECORD</span><h2 id="entryTitle"></h2><div id="entryFields"></div><button class="primary">Save record →</button></form></dialog>
+<div id="toast" role="status"></div>
+<script src="/static/app.js"></script>
+</body></html>
