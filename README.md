@@ -76,3 +76,11 @@ Then open `http://127.0.0.1:5000`.
 
 
 https://smart-campus-resource-management-1qym.onrender.com/
+
+| Faculty | Code |
+|---|---|
+| Dr. Ananya Rao | `CSE2026` |
+| Prof. Vikram Shah | `CSE2027` |
+| Dr. Meera Iyer | `CSE2028` |
+| Prof. Karan Patel | `CSE2029` |
+
